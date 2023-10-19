@@ -1,0 +1,21 @@
+from sklearn.svm import SVC
+
+svc_model = SVC()
+svc_model.fit(X_train, y_train)
+Prediction from support vector machine model on the testing data
+
+svc_pred = svc_model.predict(X_test)
+Accuracy score for SVM
+
+from sklearn import metrics
+
+print("Accuracy Score =", format(metrics.accuracy_score(y_test, svc_pred)))
+Output:
+
+Accuracy Score = 0.7401574803149606
+Classification report and confusion matrix of the SVM classifier
+
+from sklearn.metrics import classification_report, confusion_matrix
+
+print(confusion_matrix(y_test, svc_pred))
+print(classification_report(y_test,svc_pred))
